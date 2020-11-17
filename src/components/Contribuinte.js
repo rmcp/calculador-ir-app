@@ -1,24 +1,18 @@
 import React from "react";
-import css from "./contribuinte.module.css";
+import Toast from "react-bootstrap/Toast";
 
 export default function Contribuinte({ contribuinte, index }) {
-  const classes = `card ${css.box} `;
   const { nome, cpf, dependentes, rendaBruta } = contribuinte;
 
   return (
-    <div className={classes}>
-      <div className="card-header">Contribuinte {index}</div>
-      <div className="card-body">
-        <h5 className="card-title">
-          {cpf} - {nome}
-        </h5>
-        <span className="card-text">
-          <strong>Dependentes: </strong> {dependentes}
-        </span>
-        <span className="card-text">
-          <strong>Renda: </strong> {rendaBruta}
-        </span>
-      </div>
-    </div>
+    <Toast>
+      <Toast.Header closeButton={false}>
+        <strong className="mr-auto">Contribuinte {index}</strong>
+      </Toast.Header>
+      <Toast.Body>
+        Cpf: {cpf} | Nome: {nome} | Dependentes: {dependentes} | Renda:
+        {rendaBruta}
+      </Toast.Body>
+    </Toast>
   );
 }

@@ -119,6 +119,8 @@ export default function FormContribuinte({ addContribuinte }) {
           Adicionar Contribuinte
         </button>
       </form>
+
+      <br></br>
     </div>
   );
 }

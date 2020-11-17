@@ -3,7 +3,6 @@ import CalculoDataService from "../services/CalculoService";
 import FormContribuinte from "./FormContribuinte";
 import Contribuintes from "./Contribuintes";
 import CalculosList from "./CalculosList";
-import "bootstrap/dist/css/bootstrap.min.css";
 import AlertDismissible from "./AlertDismissible";
 import { Redirect } from "react-router-dom";
 
@@ -92,7 +91,7 @@ const AddCalculo = () => {
                   mensagem={mensagem}
                 ></AlertDismissible>
               )}
-
+              <br></br>
               <form>
                 <div className="form-row">
                   <div className="form-group col-md-3">
