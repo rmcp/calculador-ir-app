@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CalculoDataService from "../services/CalculoService";
 import { Link } from "react-router-dom";
+import { formatMoney } from "../helpers/formatHelpers.js";
 
 const CalculosList = ({ novosCalculos }) => {
   const [calculos, setCalculos] = useState([]);
@@ -39,7 +40,9 @@ const CalculosList = ({ novosCalculos }) => {
           {calculos &&
             calculos.map((calculo, index) => (
               <li className={"list-group-item"} key={index}>
-                {calculo.nome} - {calculo.impostoCalculado}
+                <strong>Contribuinte: </strong> {calculo.nome} -{" "}
+                <strong>Imposto Devido:</strong>{" "}
+                {formatMoney(calculo.impostoCalculado)}
               </li>
             ))}
         </ul>

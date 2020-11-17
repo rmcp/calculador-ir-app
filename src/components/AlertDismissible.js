@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
 
@@ -13,18 +13,28 @@ import Alert from "react-bootstrap/Alert";
 //   "dark",
 // ];
 
-function AlertDismissible({ variant, mensagem, titulo }) {
+function AlertDismissible({ variant, mensagem, titulo, showAlert }) {
   const [show, setShow] = useState(true);
+
+  useEffect(() => {
+    setShow(showAlert);
+  }, [showAlert]);
 
   if (show) {
     return (
-      <Alert variant={variant} onClose={() => setShow(false)} dismissible>
+      <Alert
+        fade={false}
+        variant={variant}
+        show={true}
+        onClose={() => setShow(false)}
+        dismissible
+      >
         <Alert.Heading>{titulo}</Alert.Heading>
         <p>{mensagem}</p>
       </Alert>
     );
   }
-  return <Button onClick={() => setShow(true)}>Show Alert</Button>;
+  return <Button onClick={() => setShow(true)}>Mostrar mensagem</Button>;
 }
 
 export default AlertDismissible;

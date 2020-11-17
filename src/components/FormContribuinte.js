@@ -52,6 +52,7 @@ export default function FormContribuinte({ addContribuinte }) {
         <AlertDismissible
           variant={"warning"}
           mensagem={mensagem}
+          showAlert={true}
         ></AlertDismissible>
       )}
       <form>

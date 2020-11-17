@@ -81,6 +81,7 @@ const AddCalculo = () => {
           <FormContribuinte
             addContribuinte={addContribuinte}
           ></FormContribuinte>
+
           <Contribuintes contribuintes={contribuintes}></Contribuintes>
 
           <Fragment>
@@ -89,6 +90,7 @@ const AddCalculo = () => {
                 <AlertDismissible
                   variant={"warning"}
                   mensagem={mensagem}
+                  showAlert={true}
                 ></AlertDismissible>
               )}
               <br></br>
